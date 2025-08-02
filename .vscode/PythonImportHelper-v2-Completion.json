@@ -1,0 +1,98 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "joblib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "joblib",
+        "description": "joblib",
+        "detail": "joblib",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def index():\n    return render_template('index.html')\n@app.route('/predict', methods=['POST'])\ndef predict():\n    try:\n        # Debug: Print received form data\n        print(\"Received form data:\", request.form)\n        # Extract and validate input from HTML form\n        if not request.form:\n            return \"Error: No data submitted\", 400",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "predict",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def predict():\n    try:\n        # Debug: Print received form data\n        print(\"Received form data:\", request.form)\n        # Extract and validate input from HTML form\n        if not request.form:\n            return \"Error: No data submitted\", 400\n        applicant_income = request.form.get('applicant_income')\n        person_home_ownership = request.form.get('person_home_ownership')\n        loan_amnt = request.form.get('loan_amnt')",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\n# Load trained model\nmodel = joblib.load('model.pkl')\n@app.route('/')\ndef index():\n    return render_template('index.html')\n@app.route('/predict', methods=['POST'])\ndef predict():\n    try:\n        # Debug: Print received form data",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "model = joblib.load('model.pkl')\n@app.route('/')\ndef index():\n    return render_template('index.html')\n@app.route('/predict', methods=['POST'])\ndef predict():\n    try:\n        # Debug: Print received form data\n        print(\"Received form data:\", request.form)\n        # Extract and validate input from HTML form",
+        "detail": "app",
+        "documentation": {}
+    }
+]

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="result-container">
+        <div class="result-icon" id="resultIcon">
+            ✓
+        </div>
+        
+        <h1 class="result-title">Prediction Complete</h1>
+        
+        <div class="result-message" id="resultMessage">
+            {{ result }}
+        </div>
+        
+        <div class="result-details">
+            <h3>What This Means</h3>
+            <p id="resultExplanation">
+                This prediction is based on advanced machine learning algorithms analyzing your financial profile, credit history, and loan requirements.
+            </p>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="/" class="btn btn-primary">New Prediction</a>
+            <button class="btn btn-secondary" onclick="window.print()">Save Result</button>
+        </div>
+    </div>
+
+    <script>
+        // Simulate dynamic content based on result
+        const resultText = document.getElementById('resultMessage').textContent.trim();
+        const resultIcon = document.getElementById('resultIcon');
+        const explanation = document.getElementById('resultExplanation');
+        
+        if (resultText.toLowerCase().includes('approved') || resultText.toLowerCase().includes('yes')) {
+            resultIcon.innerHTML = '✓';
+            explanation.innerHTML = 'Congratulations! Your loan application shows strong indicators for approval. This prediction suggests you meet the key criteria for loan qualification.';
+        } else if (resultText.toLowerCase().includes('denied') || resultText.toLowerCase().includes('no')) {
+            resultIcon.classList.add('declined');
+            resultIcon.innerHTML = '✗';
+            explanation.innerHTML = 'Your application may face challenges. Consider improving your credit score, increasing income, or adjusting the loan amount before reapplying.';
+        }
+    </script>
+</body>
+</html>
